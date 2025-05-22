@@ -78,25 +78,52 @@ let data = [
 
 
 
-setInterval(() => {
+// setInterval(() => {
    
-const questionElem = document.getElementById("question");
-const optionsElems = document.querySelectorAll(".option");
-const answerElem = document.getElementById("answer");
+// const questionElem = document.getElementById("question");
+// const optionsElems = document.querySelectorAll(".option");
+// const answerElem = document.getElementById("answer");
 
-function displayQuestion() {
-  const randomIndex = Math.floor(Math.random() * data.length);
-  const currentQuestion = data[randomIndex];
+// function displayQuestion() {
+//   const randomIndex = Math.floor(Math.random() * data.length);
+//   const currentQuestion = data[randomIndex];
 
-  questionElem.textContent = currentQuestion.question;
+//   questionElem.textContent = currentQuestion.question;
 
-  optionsElems.forEach((optionElem, index) => {
-    optionElem.textContent = currentQuestion.options[index];
-  });
+//   optionsElems.forEach((optionElem, index) => {
+//     optionElem.textContent = currentQuestion.options[index];
+//   });
 
 
-  answerElem.textContent = "Answer: " + currentQuestion.answer;
-}
+//   answerElem.textContent = "Answer: " + currentQuestion.answer;
+// }
 
-displayQuestion();
-}, 2000);
+// displayQuestion();
+// }, 2000);
+
+
+
+
+  const questionElem = document.getElementById("question");
+  const optionsElems = document.querySelectorAll(".option");
+  const answerElem = document.getElementById("answer");
+
+  function displayQuestion() {
+    const randomIndex = Math.floor(Math.random() * data.length);
+    const currentQuestion = data[randomIndex];
+
+    questionElem.textContent = currentQuestion.question;
+
+    optionsElems.forEach((optionElem, index) => {
+      optionElem.textContent = currentQuestion.options[index];
+    });
+
+    answerElem.textContent = "Answer: " + currentQuestion.answer;
+  }
+
+  const intervalId = setInterval(displayQuestion, 2000);
+  setTimeout(() => {
+    clearInterval(intervalId);
+    console.log("Interval cleared.");
+  }, 10000);
+
