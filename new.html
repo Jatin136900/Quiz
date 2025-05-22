@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="mydata">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+    </div>
+    <button id="btn">Change</button>
+
+
+
+
+    <script>
+
+
+
+
+
+        let button=document.getElementById("btn");
+
+        button.addEventListener('click',()=>
+    {
+              setInterval(()=>{
+              let data=document.getElementById("mydata");
+        data.innerHTML="<h1>change</h1>";
+        },1000)
+    }   
+
+    )
+    //     setTimeout(()=>
+    // {
+    //    alert("hello");
+    // },3000)
+    </script>
+</body>
+</html>
